@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平安成电智慧通行</title>
+</head>
+
+<body>
+    <p id="title">研究生同学，出校登记成功！</p>
+
+    <hr style="border: 0; background-color: lightgrey; height: 1px;" />
+
+    <table width="100%" align="center" style="border-spacing:0px 10px;">
+        <tr>
+            <th class="left_column"><span><img src="https://ftp.bmp.ovh/imgs/2020/12/b0bf04086826ab61.png"
+                        class="icon">用户姓名</span></th>
+            <th class="right_column">张曼钰</th>
+        </tr>
+        <tr>
+            <th class="left_column"><span><img src="https://ftp.bmp.ovh/imgs/2020/12/3e77cca5929553d0.png"
+                        class="icon">登记类型</span></th>
+            <th class="right_column">研究生（硕士）</th>
+        </tr>
+        <tr>
+            <th class="left_column">
+                <span style="display: inline-block;">
+                    <svg t="1608112613310" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="3790">
+                        <path
+                            d="M508.928 891.904c-179.712 0-326.144-146.432-326.144-326.144s146.432-326.144 326.144-326.144 326.144 146.432 326.144 326.144-146.432 326.144-326.144 326.144z m0-596.992c-149.504 0-270.848 121.344-270.848 270.848s121.344 270.848 270.848 270.848 270.848-121.344 270.848-270.848c0.512-148.992-121.344-270.848-270.848-270.848zM604.672 179.712H413.184c-14.336 0-26.112-11.776-26.112-26.112s11.776-26.112 26.112-26.112h191.488c14.336 0 26.112 11.776 26.112 26.112 0.512 14.336-11.264 26.112-26.112 26.112z"
+                            fill="#707070" p-id="3791"></path>
+                        <path
+                            d="M482.816 577.024V385.536c0-14.336 11.776-26.112 26.112-26.112s26.112 11.776 26.112 26.112v191.488c0 14.336-11.776 26.112-26.112 26.112s-26.112-11.776-26.112-26.112z"
+                            fill="#707070" p-id="3792"></path>
+                        <path d="M710.656 304.64m-35.328 0a35.328 35.328 0 1 0 70.656 0 35.328 35.328 0 1 0-70.656 0Z"
+                            fill="#707070" p-id="3793"></path>
+                    </svg>
+                    登记时间
+                </span>
+            </th>
+            <th class="right_column">
+                <marquee id="time" scrolldelay="0" width="90%"></marquee>
+            </th>
+        </tr>
+    </table>
+
+    <img src="https://ftp.bmp.ovh/imgs/2020/12/e4ae9f9207c12290.png" class="aligncenter">
+
+    <!-- <img src="https://ftp.bmp.ovh/imgs/2020/12/17093a9f2ea214cb.png" class="aligncenter"> -->
+
+    <style type="text/css">
+        .aligncenter {
+            clear: both;
+            display: block;
+            margin: auto;
+            width: 40%;
+            margin-top: 10%;
+        }
+
+        .icon {
+            /* margin-right: 10px; */
+            margin: auto;
+            width: 20%;
+            height: auto;
+        }
+
+        .left_column {
+            width: 40%;
+            font-size: large;
+            font-weight: 500;
+            color: #2a2a2c;
+        }
+
+        .right_column {
+            text-align: right;
+            font-size: 150%;
+            font-weight: 900;
+        }
+
+        .button {
+            border: 0;
+            background-color: #00c3a1;
+            color: white;
+        }
+
+        #title {
+            color: #1C701A;
+            font-size: 150%;
+            font-weight: 700;
+            margin-top: 15%;
+            margin-bottom: 15%;
+        }
+
+        #time {
+            color: #22b299;
+            font-weight: bold;
+            font-size: 90%;
+        }
+    </style>
+
+
+
+    <script type="text/javascript">
+        Date.prototype.format = function (fmt) {
+            var o = {
+                "M+": this.getMonth() + 1,                 //月份
+                "d+": this.getDate(),                    //日
+                "h+": this.getHours(),                   //小时
+                "m+": this.getMinutes(),                 //分
+                "s+": this.getSeconds(),                 //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "S": this.getMilliseconds()             //毫秒
+            };
+            if (/(y+)/.test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+            }
+            for (var k in o) {
+                if (new RegExp("(" + k + ")").test(fmt)) {
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                }
+            }
+            return fmt;
+        }
+        var str = new Date().format("yyyy-MM-dd hh:mm:ss");
+        str = str + " " + str;
+        var scrollLeftBox = document.getElementById("time");
+        scrollLeftBox.textContent = str;
+    </script>
+</body>
+
+</html>
